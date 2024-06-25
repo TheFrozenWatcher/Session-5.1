@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function groupAnagrams(words) {
+        const map = new Map();
+
+        // Duyệt qua từng chuỗi trong mảng words
+        words.forEach((word) => {
+          // Sắp xếp các ký tự trong chuỗi để tạo khóa
+          const sortedWord = word.split("").sort().join("");
+
+          // Nếu khóa đã tồn tại trong map, thêm chuỗi vào mảng tương ứng
+          if (map.has(sortedWord)) {
+            map.get(sortedWord).push(word);
+          } else {
+            // Nếu khóa chưa tồn tại, tạo một mảng mới với chuỗi hiện tại
+            map.set(sortedWord, [word]);
+          }
+        });
+
+        // Trả về các giá trị của map dưới dạng mảng
+        return Array.from(map.values());
+      }
+
+      // Ví dụ sử dụng hàm groupAnagrams
+      const words = ["eat", "tea", "tan", "ate", "nat", "bat"];
+
+      console.log(groupAnagrams(words));
+    </script>
+  </body>
+</html>

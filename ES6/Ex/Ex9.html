@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function mergeSortedArrays(array1, array2) {
+        // Khởi tạo mảng kết quả và các chỉ số ban đầu
+        const mergedArray = [];
+        let i = 0,
+          j = 0;
+
+        // Duyệt qua cả hai mảng cho đến khi một trong hai mảng hết phần tử
+        while (i < array1.length && j < array2.length) {
+          if (array1[i] < array2[j]) {
+            mergedArray.push(array1[i]);
+            i++;
+          } else {
+            mergedArray.push(array2[j]);
+            j++;
+          }
+        }
+
+        // Thêm các phần tử còn lại của array1 (nếu có)
+        while (i < array1.length) {
+          mergedArray.push(array1[i]);
+          i++;
+        }
+
+        // Thêm các phần tử còn lại của array2 (nếu có)
+        while (j < array2.length) {
+          mergedArray.push(array2[j]);
+          j++;
+        }
+
+        // Trả về mảng đã hợp nhất
+        return mergedArray;
+      }
+    </script>
+  </body>
+</html>

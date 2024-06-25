@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findLargestNumber(numbers) {
+    // Sử dụng reduce để tìm số lớn nhất trong mảng numbers
+    return numbers.reduce((max, current) => {
+        // So sánh và gán giá trị lớn hơn vào biến max
+        if (current > max) {
+            return current;
+        } else {
+            return max;
+        }
+    }, numbers[0]); // Khởi giá trị ban đầu của max là phần tử đầu tiên của mảng
+}
+    </script>
+</body>
+</html>

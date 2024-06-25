@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function zip(...arrays) {
+        // Lấy độ dài của mảng đầu tiên (giả sử tất cả các mảng đều có cùng độ dài)
+        const length = arrays[0].length;
+
+        // Khởi tạo mảng kết quả
+        const result = [];
+
+        // Duyệt qua từng chỉ số của các mảng
+        for (let i = 0; i < length; i++) {
+          // Tạo một mảng con chứa các phần tử có cùng chỉ số
+          const subArray = arrays.map((array) => array[i]);
+          // Thêm mảng con vào mảng kết quả
+          result.push(subArray);
+        }
+
+        // Trả về mảng kết quả
+        return result;
+      }
+    </script>
+  </body>
+</html>
